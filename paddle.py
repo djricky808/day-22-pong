@@ -12,16 +12,14 @@ class Paddle:
         self.paddle.color('white')
         self.paddle.penup()
         self.paddle.shapesize(stretch_wid= HEIGHT, stretch_len= WIDTH)
-        self.x = x_pos
-        self.y = Y
-        self.paddle.goto(self.x , self.y)
+        self.paddle.goto(x_pos , Y)
 
     def move_up(self):
-        if self.y < 250:
-            self.y += INCREMENT
-            self.paddle.goto(self.x, self.y)
+        if self.paddle.ycor() < 250:
+            new_y = self.paddle.ycor() + INCREMENT
+            self.paddle.goto(self.paddle.xcor(), new_y)
 
     def move_down(self):
-        if self.y > -250:
-            self.y -= INCREMENT
-            self.paddle.goto(self.x, self.y)
+        if self.paddle.ycor() > -250:
+            new_y = self.paddle.ycor() - INCREMENT
+            self.paddle.goto(self.paddle.xcor(), new_y)
