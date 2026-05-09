@@ -11,6 +11,7 @@ right_paddle_x_pos = 350
 left_paddle_x_pos = -350
 
 right_paddle = Paddle(right_paddle_x_pos)
+left_paddle = Paddle(left_paddle_x_pos)
 
 root = screen.getcanvas().winfo_toplevel()
 root.call('wm','attributes','.','-topmost','1')
@@ -18,6 +19,8 @@ root.call('wm','attributes','.','-topmost','1')
 screen.listen()
 screen.onkey(right_paddle.move_up, "Up")
 screen.onkey(right_paddle.move_down, "Down")
+screen.onkey(left_paddle.move_up, "w")
+screen.onkey(left_paddle.move_down, "s")
 
 game_is_on = True
 while game_is_on:
