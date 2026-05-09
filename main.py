@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+import time
 
 screen = Screen()
 screen.bgcolor('black')
@@ -27,8 +28,8 @@ screen.onkey(left_paddle.move_down, "s")
 
 game_is_on = True
 
-ball.rotate_ball()
 while game_is_on:
+    time.sleep(0.1)
     screen.update()
     ball.move_ball()
 
