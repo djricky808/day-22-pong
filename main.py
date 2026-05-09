@@ -7,11 +7,11 @@ screen.setup(width=800, height=600)
 screen.title("Pong")
 screen.tracer(0)
 
-right_paddle_x_pos = 350
-left_paddle_x_pos = -350
+RIGHT_PADDLE_POS = (350,0)
+LEFT_PADDLE_POS = (-350,0)
 
-right_paddle = Paddle(right_paddle_x_pos)
-left_paddle = Paddle(left_paddle_x_pos)
+right_paddle = Paddle(RIGHT_PADDLE_POS)
+left_paddle = Paddle(LEFT_PADDLE_POS)
 
 root = screen.getcanvas().winfo_toplevel()
 root.call('wm','attributes','.','-topmost','1')
