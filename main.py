@@ -1,5 +1,6 @@
 from turtle import Screen
 from paddle import Paddle
+from ball import Ball
 
 screen = Screen()
 screen.bgcolor('black')
@@ -13,6 +14,8 @@ LEFT_PADDLE_POS = (-350,0)
 right_paddle = Paddle(RIGHT_PADDLE_POS)
 left_paddle = Paddle(LEFT_PADDLE_POS)
 
+ball = Ball()
+
 root = screen.getcanvas().winfo_toplevel()
 root.call('wm','attributes','.','-topmost','1')
 
@@ -23,7 +26,10 @@ screen.onkey(left_paddle.move_up, "w")
 screen.onkey(left_paddle.move_down, "s")
 
 game_is_on = True
+
+ball.rotate_ball()
 while game_is_on:
     screen.update()
+    ball.move_ball()
 
 screen.exitonclick()
