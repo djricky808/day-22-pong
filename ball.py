@@ -6,16 +6,16 @@ INCREMENT = 10
 class Ball(Turtle):
     def __init__(self):
         super().__init__()
-        self.reset_ball()
-        self.x_move = INCREMENT
-        self.y_move = INCREMENT
-
-    def reset_ball(self):
         self.clear()
         self.shape("circle")
         self.color("white")
         self.penup()
+        self.x_move = INCREMENT
+        self.y_move = INCREMENT
+
+    def reset_ball(self):
         self.goto(0,0)
+        self.bounce_x()
 
     def move_ball(self):
         new_x = self.xcor() + self.x_move
