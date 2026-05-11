@@ -1,6 +1,7 @@
 from turtle import Turtle
 
 INCREMENT = 10
+SPEED_INCREMENT = 1.2
 
 
 class Ball(Turtle):
@@ -15,6 +16,8 @@ class Ball(Turtle):
 
     def reset_ball(self):
         self.goto(0,0)
+        self.x_move = INCREMENT
+        self.y_move = INCREMENT
         self.bounce_x()
 
     def move_ball(self):
@@ -27,3 +30,8 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.x_move *= -1
+        self.increase_ball_speed()
+
+    def increase_ball_speed(self):
+        self.x_move *= SPEED_INCREMENT
+        self.y_move *= SPEED_INCREMENT
