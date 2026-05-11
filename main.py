@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()
@@ -16,6 +17,7 @@ right_paddle = Paddle(RIGHT_PADDLE_POS)
 left_paddle = Paddle(LEFT_PADDLE_POS)
 
 ball = Ball()
+scoreboard = Scoreboard()
 
 root = screen.getcanvas().winfo_toplevel()
 root.call('wm','attributes','.','-topmost','1')
@@ -41,8 +43,10 @@ while game_is_on:
 
     if ball.xcor()<-380:
         ball.reset_ball()
+        scoreboard.add_point_right()
 
     if ball.xcor()> 380:
         ball.reset_ball()
+        scoreboard.add_point_left()
 
 screen.exitonclick()
